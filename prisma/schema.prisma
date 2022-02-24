@@ -10,3 +10,23 @@ generator client {
   provider = "prisma-client-js"
   previewFeatures = ["dataproxy", "referentialIntegrity"]
 }
+
+model Deck {
+  id              Int @id @default(autoincrement())
+  shuffle         Boolean
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  remainingCards  Int
+  cards           Card[]
+}
+
+model Card {
+  id        Int      @id @default(autoincrement())
+  value     String
+  suit      String
+  code      String
+  published Boolean  @default(false)
+  viewCount Int      @default(0)
+  deck      Deck?    @relation(fields: [deckId], references: [id])
+  deckId    Int?
+}
