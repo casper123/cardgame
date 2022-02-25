@@ -1,3 +1,3 @@
 { 
-  "DBHost": "mongodb+srv://casperkotwal:qwertyuioop@card-game.g6m7s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" 
+  "dbConnectionString": "mongodb+srv://casperkotwal:qwertyuioop@card-game.g6m7s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" 
 }

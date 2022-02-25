@@ -13,12 +13,12 @@ import * as express from 'express';
 import * as mongoose from 'mongoose';
 import * as morgan from 'morgan';
 import * as config from 'config';
-import { DeckCreateRequestModel } from './models/cg.deck.create.request.model';
-import { DeckOpenRequestModel } from './models/cg.deck.open.request.model';
-import { DeckDrawRequestModel } from './models/cg.deck.draw.request.model';
-import DeckController from './controllers/cg.deck.controllers';
+import { DeckCreateRequestModel } from './main/models/cg.deck.create.request.model';
+import { DeckOpenRequestModel } from './main/models/cg.deck.open.request.model';
+import { DeckDrawRequestModel } from './main/models/cg.deck.draw.request.model';
+import DeckController from './main/controllers/cg.deck.controllers';
 
-mongoose.connect('mongodb+srv://casperkotwal:qwertyuioop@card-game.g6m7s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', (err: any) => {
+mongoose.connect(config.get('dbConnectionString'), (err: any) => {
   if (err) {
     console.log('connection error', err.message);
   } else {
